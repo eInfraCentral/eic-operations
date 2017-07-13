@@ -1,0 +1,10 @@
+cd ../eic-registry
+git pull
+cd ../eic-registry-api
+git pull
+cd ../eic-registry-model
+git pull
+cd ../eic-registry-rest
+git pull
+cd ../eic-docker
+git pull

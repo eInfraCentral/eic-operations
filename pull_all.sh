@@ -8,3 +8,5 @@ cd ../eic-registry-rest
 git pull
 cd ../eic-docker
 git pull
+cd ../eic-data
+git pull

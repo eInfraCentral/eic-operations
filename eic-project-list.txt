@@ -1,0 +1,6 @@
+eic-registry
+eic-registry-api
+eic-registry-model
+eic-registry-rest
+eic-docker
+eic-data

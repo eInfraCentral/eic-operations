@@ -1,4 +1,4 @@
 while read F  ; do
 	cd ../$F
-	git pull
+	git status
 done <eic-project-list.txt

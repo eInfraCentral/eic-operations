@@ -1,2 +1,3 @@
 cd ../eic-platform
-nohup npm start
+killall node
+nohup npm start &

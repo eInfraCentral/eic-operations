@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 cd ..
 while read F  ; do
 	echo -e "\e[96m$F\e[0m"

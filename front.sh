@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 cd ../eic-platform
 docker kill eic-platform
 docker rm eic-platform

@@ -4,3 +4,4 @@ npm install
 killall node
 rm nohup.out
 nohup npm start &
+./blog.sh

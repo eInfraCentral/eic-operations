@@ -1,0 +1,2 @@
+./loadResourceTypes.sh
+./loadResources.sh

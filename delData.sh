@@ -1,0 +1,2 @@
+./deleteResourceTypes.sh
+./deleteResources.sh

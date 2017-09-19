@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 
-function pull {
-	git -C ../$1 pull
-	echo -e "\e[96m$1\e[0m"
-}
-
 while read F  ; do
-	pull $F &
+	echo -e "\e[96m$F\e[0m"
+	git -C ../$F pull
 done <eic-project-list.txt
-wait

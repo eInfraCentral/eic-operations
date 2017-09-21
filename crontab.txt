@@ -1,0 +1,1 @@
+1 * * * * EIC_ROOT/eic/verbose-palm-tree/regdump.sh >/dev/null 2>&1

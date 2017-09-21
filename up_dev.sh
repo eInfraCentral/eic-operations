@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
+
+./front_dev_blog.sh
+./front_dev_down.sh
 cd ../eic-platform
-npm install
-killall node
 rm nohup.out
 nohup npm start &
-./blog.sh

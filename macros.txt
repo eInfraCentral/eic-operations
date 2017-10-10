@@ -13,8 +13,8 @@ i = 3
 
 Do While sheets.Count > i
   sheet = sheets.getByIndex(i)
-  cntrllr = ThisComponent.CurrentController
-  cntrllr.setActiveSheet(sheet)
+  controller = ThisComponent.CurrentController
+  controller.setActiveSheet(sheet)
   sURL = "file:///home/pgl/Documents/services/" & sheets.ElementNames(i) & ".csv"
   columns = sheet.getColumns()
   columns.removeByIndex(0,1)

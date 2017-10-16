@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 ./pull.sh
+./npmi.sh &
+./up_prod.sh &
 ./mcip.sh
 ./delData.sh
 ./back_down.sh
@@ -15,3 +17,4 @@ done < <(docker logs tomcat -f 2>&1)
 ./addData.sh
 ./back_down.sh
 ./back.sh
+

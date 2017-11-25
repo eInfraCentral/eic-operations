@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+dat=`basename "$0"`
+
 case $1 in
     add)
         case $2 in
@@ -12,10 +14,11 @@ case $1 in
                 ./loadResources.sh localhost
             ;;
             *)
-                ./dat.sh add types
-                ./dat.sh add resources
+                $dat add types
+                $dat add resources
             ;;
         esac
+        ./beep.sh
     ;;
     del)
         case $2 in
@@ -26,8 +29,8 @@ case $1 in
                 psql -hlocalhost -Uvrasidas registry -c 'drop owned by vrasidas cascade;'
             ;;
             *)
-                ./dat.sh del types
-                ./dat.sh del resources
+                $dat del types
+                $dat del resources
             ;;
         esac
     ;;

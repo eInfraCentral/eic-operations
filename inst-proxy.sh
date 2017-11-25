@@ -6,4 +6,4 @@ sudo nano /etc/nginx/sites-available/nginx.proxy
 sudo ln -s /etc/nginx/sites-available/nginx.proxy /etc/nginx/sites-enabled/nginx.proxy
 sudo rm /etc/nginx/sites-enabled/default
 sudo service nginx restart
-
+./beep.sh

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dat=`basename "$0"`
+dat=./`basename "$0"`
 
 case $1 in
     add)

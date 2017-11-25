@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-tom=`basename "$0"`
+tom=./`basename "$0"`
 
 case $1 in
     up)

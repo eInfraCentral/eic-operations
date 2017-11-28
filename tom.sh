@@ -12,9 +12,9 @@ case $1 in
         docker-compose down
     ;;
     restart)
-        $tom down
-        $tom up
-        $tom wait
+        ${tom} down
+        ${tom} up
+        ${tom} wait
         ./beep.sh
     ;;
     wait)

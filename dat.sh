@@ -14,8 +14,8 @@ case $1 in
                 ./loadResources.sh localhost
             ;;
             *)
-                $dat add types
-                $dat add resources
+                ${dat} add types
+                ${dat} add resources
             ;;
         esac
         ./beep.sh
@@ -29,8 +29,8 @@ case $1 in
                 psql -hlocalhost -Uvrasidas registry -c 'drop owned by vrasidas cascade;'
             ;;
             *)
-                $dat del types
-                $dat del resources
+                ${dat} del types
+                ${dat} del resources
             ;;
         esac
     ;;

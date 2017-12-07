@@ -1,5 +1,5 @@
 .idea/
-dev.log
+dev*.log
 dev.pid
-dev.err
+dev*.err
 /npm-debug.log

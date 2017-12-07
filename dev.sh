@@ -13,6 +13,10 @@ case $1 in
         kill -9 $(cat dev.pid)
         rm dev.pid
     ;;
+    restart)
+        ${dev} down
+        ${dev} up
+    ;;
     log)
         tail -f dev.log dev.err
     ;;

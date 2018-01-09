@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-./mvn.sh clean install package
+./mvn.sh clean install package "$@"

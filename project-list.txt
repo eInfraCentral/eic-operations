@@ -5,5 +5,6 @@ eInfraCentral/eic-registry-api
 eInfraCentral/eic-registry-rest
 eInfraCentral/eic-registry
 eInfraCentral/eic-platform
+eInfraCentral/eic-nginx
 courado/uoa-admin-tools
 plambros/verbose-palm-tree

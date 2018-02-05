@@ -4,18 +4,36 @@ declare -a specials=("beta.einfracentral.eu" "dl068.madgik.di.uoa.gr" "localhost
 
 source=${1}
 target=${2}
+type=${3}
 
-force=false
-if [[ -v specials[${target}] ]]; then
-    read -p "WARNING: Sure you want to overwrite from ${source} to ${target}? (yes/no)"
-    if [[ $REPLY = "yes" ]]; then
-        force=true
-    fi
+if [ -z "$3" ]; then
+    type=elastic
 fi
+
+force=true
+
+for i in "${specials[@]}"; do
+    if [ "$i" == "$target" ] ; then
+        force=false
+        read -p "WARNING: Sure you want to overwrite from ${source} to ${target}? (yes/no)"
+        if [[ $REPLY = "yes" ]]; then
+            force=true
+        fi
+    fi
+done
 
 if [ "$force" = true ]; then
     cd ../eic-data/exports/
-    ./dumpJasons.sh ${source}
-    ./convertJasonsToXmls.js
-    ./postXmls.sh ${target}
+    pwd
+    if [ "$type" = elastic ]; then
+        ./elasticDumpJasons.sh ${source}
+        ./elasticConvertJasonsToXmls.js
+        ./elasticPostXmls.sh ${target}
+    fi
+    if [ "$type" = core ]; then
+        ./coreDumpJasons.sh ${source}
+        ./coreConvertJasonsToXmls.js
+        ./corePostXmls.sh ${target}
+    fi
+
 fi

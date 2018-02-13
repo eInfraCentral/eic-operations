@@ -9,5 +9,5 @@ if installed paplay ; then
 fi
 
 if installed notify-send ; then
-    notify-send $1
+    notify-send "$1"
 fi

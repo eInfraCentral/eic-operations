@@ -2,4 +2,4 @@
 
 find .. -name "pom.xml" -exec mvn "$@" -f '{}' \;
 
-./beep.sh
+./beep.sh "Finished building"

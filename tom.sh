@@ -15,7 +15,7 @@ case $1 in
         ${tom} down
         ${tom} up
         ${tom} wait
-        ./beep.sh
+        ./beep.sh "Finished restarting backend"
     ;;
     wait)
         while read line; do

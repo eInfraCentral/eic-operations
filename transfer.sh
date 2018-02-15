@@ -16,8 +16,8 @@ for i in "${specials[@]}"; do
     if [ "$i" == "$target" ] ; then
         force=false
         msg="WARNING: Sure you want to overwrite from ${source} to ${target}? (yes/no)"
-        ./beep.sh msg
-        read -p msg
+        ./beep.sh ${msg}
+        read -p ${msg}
         if [[ $REPLY = "yes" ]]; then
             force=true
         fi

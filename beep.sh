@@ -5,7 +5,7 @@ installed () {
 }
 
 if installed paplay ; then
-    paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+    paplay --volume 32768 /usr/share/sounds/freedesktop/stereo/complete.oga
 fi
 
 if installed notify-send ; then

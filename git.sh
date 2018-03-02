@@ -11,10 +11,10 @@ clone=0
 
 #filter projects/commands
 for arg in "$@" ; do
-    if [ -n "${aliases[$arg]}" ]; then
+    if [[ -n "${aliases[$arg]}" ]]; then
         projects+=("${aliases[$arg]}")
     else
-        if [ "$arg" == "clone" ]; then
+        if [[ "$arg" == "clone" ]]; then
             clone=1
         fi
         commands+=(${arg})
@@ -35,7 +35,7 @@ join() {
 for project in "${projects[@]}"; do
     echo -e "\e[96m${project}\e[0m"
     projectShort=$(echo ${project} | cut -d'/' -f2)
-    if [ ${clone} -eq 1 ]; then
+    if [[ ${clone} -eq 1 ]]; then
         cmd="git clone https://github.com/${project}.git ../$projectShort"
     else
         cmd="git -C ../${projectShort} $(join "${commands[@]}")"

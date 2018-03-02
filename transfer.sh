@@ -6,15 +6,15 @@ source=${1}
 target=${2}
 type=${3}
 
-if [ -z "$3" ]; then
+if [[ -z "$3" ]]; then
     type=elastic
 fi
 
 force=1
 
 for i in "${specials[@]}"; do
-    if [ "$i" == "$target" ] ; then
         force=false
+    if [[ "$i" == "$target" ]] ; then
         msg="WARNING: Sure you want to overwrite from ${source} to ${target}? (yes/no)"
         ./beep.sh "$msg"
         read -p "$msg"
@@ -28,13 +28,13 @@ if [[ ${force} -eq 1 ]]; then
     cd ../eic-data/exports/
     stamp=$(date +%s)
     sudo mv xmls xmls.${stamp}
-    if [ "$type" = elastic ]; then
+    if [[ "$type" == "elastic" ]]; then
         sudo mv elasticJasons elasticJasons.${stamp}
         ./elasticDumpJasons.sh ${source}
         ./elasticConvertJasonsToXmls.js
         ./elasticPostXmls.sh ${target}
     fi
-    if [ "$type" = core ]; then
+    if [[ "$type" == "core" ]]; then
         sudo mv jsons jsons.${stamp}
         ./coreDumpJasons.sh ${source}
         ./coreConvertJasonsToXmls.js

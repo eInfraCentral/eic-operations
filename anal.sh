@@ -3,22 +3,25 @@
 host=vereniki.athenarc.gr
 ip=$(dig +short ${host})
 anal=./`basename "$0"`
-ymlDir=../eic-analytics
+orig=$(pwd)
+dir="${orig}/../eic-analytics"
 
 case $1 in
     up)
-        docker-compose -f ${ymlDir} up -d -build
+        cd ${dir}
+        docker-compose up -d --build
+        cd ${orig}
     ;;
     down)
-        cd ../eic-analytics
-        docker-compose -f ${ymlDir} down
+        cd ${dir}
+        docker-compose down
+        cd ${orig}
     ;;
     restart)
         ${anal} down
         ${anal} up
     ;;
     setup)
-        cd ../eic-analytics
-        MYSQL_ROOT_PASSWORD=PASSWORD docker-compose -f ${ymlDir} up -d --build
+        MYSQL_ROOT_PASSWORD=$2 ${anal} up
     ;;
 esac

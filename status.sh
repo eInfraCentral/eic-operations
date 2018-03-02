@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-./git.sh status
+./git.sh status "$@"

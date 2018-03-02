@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-./git.sh push -u origin master
+./git.sh push -u origin master "$@"

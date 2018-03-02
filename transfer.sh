@@ -10,7 +10,7 @@ if [ -z "$3" ]; then
     type=elastic
 fi
 
-force=true
+force=1
 
 for i in "${specials[@]}"; do
     if [ "$i" == "$target" ] ; then
@@ -19,12 +19,12 @@ for i in "${specials[@]}"; do
         ./beep.sh "$msg"
         read -p "$msg"
         if [[ $REPLY = "yes" ]]; then
-            force=true
+            force=1
         fi
     fi
 done
 
-if [ "$force" = true ]; then
+if [[ ${force} -eq 1 ]]; then
     cd ../eic-data/exports/
     stamp=$(date +%s)
     sudo mv xmls xmls.${stamp}

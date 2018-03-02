@@ -13,8 +13,8 @@ fi
 force=1
 
 for i in "${specials[@]}"; do
-        force=false
     if [[ "$i" == "$target" ]] ; then
+        force=0
         msg="WARNING: Sure you want to overwrite from ${source} to ${target}? (yes/no)"
         ./beep.sh "$msg"
         read -p "$msg"

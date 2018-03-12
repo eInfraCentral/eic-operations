@@ -29,13 +29,13 @@ if [[ ${force} -eq 1 ]]; then
     stamp=$(date +%s)
     sudo mv xmls xmls.${stamp}
     if [[ "$type" == "elastic" ]]; then
-        sudo mv elasticJasons elasticJasons.${stamp}
+        mv elasticJasons elasticJasons.${stamp}
         ./elasticDumpJasons.sh ${source}
         ./elasticConvertJasonsToXmls.js
         ./elasticPostXmls.sh ${target}
     fi
     if [[ "$type" == "core" ]]; then
-        sudo mv jsons jsons.${stamp}
+        mv jsons jsons.${stamp}
         ./coreDumpJasons.sh ${source}
         ./coreConvertJasonsToXmls.js
         ./corePostXmls.sh ${target}

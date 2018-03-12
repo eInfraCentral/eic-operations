@@ -32,13 +32,23 @@ if [[ ${force} -eq 1 ]]; then
         mv elasticJasons elasticJasons.${stamp}
         ./elasticDumpJasons.sh ${source}
         ./elasticConvertJasonsToXmls.js
-        ./elasticPostXmls.sh ${target}
+        msg="WARNING: You're about to upload from ${source} to ${target}. Please say ok when you're done making manual changes."
+        ./beep.sh "$msg"
+        read -p "$msg"
+        if [[ $REPLY = "ok" ]]; then
+            ./elasticPostXmls.sh ${target}
+        fi
     fi
     if [[ "$type" == "core" ]]; then
         mv jsons jsons.${stamp}
         ./coreDumpJasons.sh ${source}
         ./coreConvertJasonsToXmls.js
-        ./corePostXmls.sh ${target}
+        msg="WARNING: You're about to upload from ${source} to ${target}. Please say ok when you're done making manual changes."
+        ./beep.sh "$msg"
+        read -p "$msg"
+        if [[ $REPLY = "ok" ]]; then
+            ./corePostXmls.sh ${target}
+        fi
     fi
 
 fi

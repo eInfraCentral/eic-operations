@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-declare -a specials=("beta.einfracentral.eu" "dl068.madgik.di.uoa.gr" "localhost")
+declare -a specials=("beta.einfracentral.eu" "dl068.madgik.di.uoa.gr" "localhost" "dl068")
 
 source=${1}
 target=${2}

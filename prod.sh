@@ -5,7 +5,7 @@ prod=./`basename "$0"`
 case $1 in
     up)
         cd ../eic-platform
-        npm run deploy:complete
+        npm run deploy
     ;;
     down)
         docker stop eic-platform

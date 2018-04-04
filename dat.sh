@@ -24,7 +24,7 @@ case $1 in
     del)
         case $2 in
             types)
-                curl -X "DELETE" http://localhost:9200/resourceTypes
+                curl -X "DELETE" http://localhost:9222/resourceTypes
             ;;
             resources)
                 psql -hlocalhost -Uvrasidas registry -c 'drop owned by vrasidas cascade;'

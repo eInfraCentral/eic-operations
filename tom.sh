@@ -18,6 +18,7 @@ case $1 in
         ./beep.sh "Finished restarting backend"
     ;;
     wait)
+        echo "Waiting for artifact to deploy"
         while read line; do
             if [[ ${line} =~ "Server startup in" ]] ; then
                 break;

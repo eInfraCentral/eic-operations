@@ -8,4 +8,4 @@ eInfraCentral/eic-platform
 eInfraCentral/eic-nginx
 eInfraCentral/eic-analytics
 courado/uoa-admin-tools
-plambros/verbose-palm-tree
+plambros/eic-operations

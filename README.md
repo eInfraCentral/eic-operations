@@ -1,9 +1,8 @@
 # eic-operations
 
 How to setup an einfracentral instance:
-
 clone this
-cd eic-operations
+cd into eic-operations
 ./clone.sh (clones all the necessary projects)
 
 Backend:
@@ -15,9 +14,17 @@ Add data in some way (either POST your own, or use ./dat.sh add resources for an
 ./tom.sh restart (restarts backend)
 
 Frontend:
+cd into eic-nginx/sites
+./sites.sh add proxy (adds site as proxy to nginx)
+./sites.sh enable proxy (enables site)
 ./prod.sh install (sets frontend up)
 ./prod.sh up (raises frontend)
 
 Analytics:
 docker network create lb_web
 ./anal.sh up
+
+Maintenance:
+cd into eic-nginx/sites
+./sites.sh add maintenance (adds maintenance page)
+./sites.sh enable maintenance (enables maintenance page)

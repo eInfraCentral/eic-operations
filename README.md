@@ -7,7 +7,7 @@ cd into eic-operations
 
 Backend:
 ./mcip.sh (builds the backend)
-Fill in eic-docker/secret.env with your instance's secrets
+Fill in eic-docker/secret.env with your instance's secrets (look at the template there for guidance)
 ./tom.sh up (raises backend jms, postgress, elastic, tomcat)
 ./dat.sh add types (adds data types)
 Add data in some way (either POST your own, or use ./dat.sh add resources for an older snapshot of eic's catalogue)

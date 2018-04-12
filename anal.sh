@@ -10,12 +10,12 @@ case $1 in
     up)
         cd ${dir}
         docker-compose up -d --build
-        cd ${orig}
+        cd -
     ;;
     down)
         cd ${dir}
         docker-compose down
-        cd ${orig}
+        cd -
     ;;
     restart)
         ${anal} down

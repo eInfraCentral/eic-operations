@@ -17,4 +17,7 @@ case $1 in
     log)
         docker logs eic-platform -f
     ;;
+    install)
+        cd ../eic-platform
+        npm install
 esac

@@ -3,7 +3,7 @@ declare -A aliases=(["data"]="eInfraCentral/eic-data" ["docker"]="eInfraCentral/
 ["model"]="eInfraCentral/eic-registry-model" ["api"]="eInfraCentral/eic-registry-api" ["rest"]="eInfraCentral/eic-registry-rest"
 ["registry"]="eInfraCentral/eic-registry" ["reg"]="eInfraCentral/eic-registry" ["plat"]="eInfraCentral/eic-platform"
 ["platform"]="eInfraCentral/eic-platform" ["nginx"]="eInfraCentral/eic-nginx" ["analytics"]="eInfraCentral/eic-analytics"
-["anal"]="eInfraCentral/eic-analytics" ["ops"]="plambros/eic-operations" ["faq"]="courado/uoa-admin-tools")
+["anal"]="eInfraCentral/eic-analytics" ["ops"]="eInfraCentral/eic-operations" ["faq"]="courado/uoa-admin-tools")
 commands=()
 projects=()
 

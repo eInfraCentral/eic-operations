@@ -1,19 +1,15 @@
 #!/usr/bin/env bash
 
-host=vereniki.athenarc.gr
-ip=$(dig +short ${host})
 anal=./`basename "$0"`
-orig=$(pwd)
-dir="${orig}/../eic-analytics"
 
 case $1 in
     up)
-        cd ${dir}
+        cd ../eic-analytics
         docker-compose up -d --build
         cd -
     ;;
     down)
-        cd ${dir}
+        cd ../eic-analytics
         docker-compose down
         cd -
     ;;

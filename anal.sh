@@ -18,6 +18,7 @@ case $1 in
         ${anal} up
     ;;
     setup)
+        docker network create lb_web
         MYSQL_ROOT_PASSWORD=$2 ${anal} up
     ;;
 esac

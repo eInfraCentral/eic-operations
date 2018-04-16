@@ -1,30 +1,42 @@
 # eic-operations
 
-How to setup an einfracentral instance:
-clone this
-cd into eic-operations
-./clone.sh (clones all the necessary projects)
+How to setup your very own eInfraCentral instance:
 
-Backend:
-./mcip.sh (builds the backend)
-Fill in eic-docker/secret.env with your instance's secrets (look at the template there for guidance)
-./tom.sh up (raises backend jms, postgress, elastic, tomcat)
-./dat.sh add types (adds data types)
-Add data in some way (either POST your own, or use ./dat.sh add resources for an older snapshot of eic's catalogue)
-./tom.sh restart (restarts backend)
-
-Frontend:
-cd into eic-nginx/sites
-./sites.sh add proxy (adds site as proxy to nginx)
-./sites.sh enable proxy (enables site)
-./prod.sh install (sets frontend up)
-./prod.sh up (raises frontend)
-
-Analytics:
-docker network create lb_web
-./anal.sh up
-
-Maintenance:
-cd into eic-nginx/sites
-./sites.sh add maintenance (adds maintenance page)
-./sites.sh enable maintenance (enables maintenance page)
+1. Get the code
+    ```bash
+    git clone https://github.com/eInfraCentral/eic-operations.git
+    cd eic-operations
+    ./clone.sh
+    ```
+2. Install site dependencies, then set up nginx, and analytics
+    ```bash
+    ./prod.sh install
+    ./sites.sh setup
+    ./anal.sh setup
+    ```
+3. Fill in eic-docker/secret.env with your instance's secrets (look at the template there for guidance)
+4. Build & raise backend
+    ```bash
+    ./mcip.sh
+    ./tom.sh up
+    ```
+5. Populate repository in some way (either POST your own, or use `./dat.sh add resources` for an older snapshot of eic's catalogue)
+    ```bash
+    ./dat.sh add types
+    ./dat.sh add resources
+    ./tom.sh restart
+    ```
+6. Build & raise frontend, and analytics:
+    ```bash
+    ./prod.sh up
+    ./anal.sh up
+    ```
+    
+* To enable maintenance page:
+    ```bash
+    ./sites.sh enable maintenance
+    ```
+* To disable maintenance page:
+    ```bash
+    ./sites.sh enable proxy
+    ```

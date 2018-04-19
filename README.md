@@ -47,3 +47,8 @@ How to setup your very own eInfraCentral instance:
     ```bash
     ./sites.sh enable proxy
     ```
+* To run docker as a sudoer:
+     ```bash
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+     ```

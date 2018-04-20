@@ -52,3 +52,9 @@ How to setup your very own eInfraCentral instance:
     sudo groupadd docker
     sudo usermod -aG docker $USER
      ```
+* To fix elastic restart loops until reboot:
+    ```bash
+    sysctl -w vm.max_map_count=262144
+    ```
+* To fix elastic restart loops forever:
+    * Put it in sysctl.conf

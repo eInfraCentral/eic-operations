@@ -3,11 +3,22 @@
 How to setup your very own eInfraCentral instance:
 
 0. Dependencies
-    * Java 8
-    * Schemagen 2.2.8
-    * Maven 3.5.0
+    Deploy:
     * Docker (17.12.0-ce, and 18.03.0-ce tested ; try http://get.docker.com/)
     * Docker-compose (1.14.0, 1.16.1, and 1.19.0 tested ; try `sudo curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose`)
+
+    Back:
+    * Java 8
+
+    Back build:
+    * Schemagen 2.2.8
+    * Maven 3.5.0
+
+    Front:
+    * Node (9; try https://deb.nodesource.com/setup_9.x)
+
+    Front build:
+    * make (spawned by gyp on npm install)
     
 1. Get the code
     ```bash

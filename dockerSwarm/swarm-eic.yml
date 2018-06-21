@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  
+  registry:
+    image: eic-registry
+    ports:
+      - "8080:8080"
+    networks:
+      - eic-net
+    volumes:
+      - registrydata:/media/maven-data
+    env_file : eic-registry.env
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 20
+        delay: 5s
+
+volumes:
+  registrydata:
+    driver: local
+
+networks:
+  eic-net:
+    external: true

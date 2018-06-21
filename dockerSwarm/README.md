@@ -3,7 +3,7 @@
 ## Create Swarm
 
 If the network does not exist.
-	1. `docker network create -d overlay --attachable omtd-net`
+	1. `docker network create -d overlay --attachable eic-net`
 	2. `docker build . -t eic-postgres`
 	
 Then create the infrastructure docker services with the `swarm-infra.yml` file.

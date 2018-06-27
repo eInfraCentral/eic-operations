@@ -2,7 +2,7 @@
 
 ## Create Swarm
 
-If the network does not exist.
+If the network does not exist and the database.
 	1. `docker network create -d overlay --attachable eic-net`
 	2. `docker build . -t eic-postgres`
 	
@@ -14,6 +14,8 @@ i.e. `docker stack deploy -c swarm-eic.yml eic`
 
 ## Delete Swarm
 The command to delete the swarm is `docker stack rm <name>`.
+
+The command to delete the network is `docker network rm <network_name>`.
 
 ## Update Service
 	1. Update Image `docker service update --image <image_name> <service_name>`

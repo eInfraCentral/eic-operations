@@ -1,16 +1,15 @@
 # Docker swarm Instructions
 
 ## Create Swarm
-
-If the network does not exist and the database.
-    1. `docker network create -d overlay --attachable eic-net`
+If the network does not exist and the database.  
+    1. `docker network create -d overlay --attachable eic-net`  
     2. `docker build . -t eic-postgres`
     
-Then create the infrastructure docker services with the `swarm-infra.yml` file.
-i.e. `docker stack deploy -c swarm-infra.yml infra`
+Then create the infrastructure docker services with the `swarm-infra.yml` file.  
+i.e. `docker stack deploy -c swarm-infra.yml infra`  
 
-In order to create the registry service use the `swarm-eic.yml` file.
-i.e. `docker stack deploy -c swarm-eic.yml eic`
+In order to create the registry service use the `swarm-eic.yml` file.  
+i.e. `docker stack deploy -c swarm-eic.yml eic`  
 
 ## Delete Swarm
 The command to delete the swarm is `docker stack rm <name>`.
